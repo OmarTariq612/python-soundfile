@@ -1218,6 +1218,11 @@ class SoundFile(object):
         if file_ptr == _ffi.NULL:
             # get the actual error code
             err = _snd.sf_error(file_ptr)
+
+            print(f"{file = }", _sys.stderr)
+            print(f"{mode_int = }", _sys.stderr)
+            print(f"{self._info = }", _sys.stderr)
+
             raise LibsndfileError(err, prefix="Error opening {0!r}: ".format(self.name))
         if mode_int == _snd.SFM_WRITE:
             # Due to a bug in libsndfile version <= 1.0.25, frames != 0
