@@ -1202,6 +1202,11 @@ class SoundFile(object):
                     openfunction = _snd.sf_wchar_open
                 else:
                     file = file.encode(_sys.getfilesystemencoding())
+
+            print(f"{file = }")
+            print(f"{mode_int = }")
+            print(f"{self._info = }")
+
             file_ptr = openfunction(file, mode_int, self._info)
         elif isinstance(file, int):
             file_ptr = _snd.sf_open_fd(file, mode_int, self._info, closefd)
