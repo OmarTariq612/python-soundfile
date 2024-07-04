@@ -1203,9 +1203,9 @@ class SoundFile(object):
                 else:
                     file = file.encode(_sys.getfilesystemencoding())
 
-            print(f"{file = }")
-            print(f"{mode_int = }")
-            print(f"{self._info = }")
+            print(f"{file = }", _sys.stderr)
+            print(f"{mode_int = }", _sys.stderr)
+            print(f"{self._info = }", _sys.stderr)
 
             file_ptr = openfunction(file, mode_int, self._info)
         elif isinstance(file, int):
